@@ -16,6 +16,7 @@ body {
     width: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -110,9 +111,9 @@ main {
 
         &__type {
             font-size: 0.7rem;
-            & i {
-                color: c.$facebook;
-            }
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         &__number {
@@ -128,7 +129,7 @@ main {
         }
 
         &__change.positive {
-            width: 5rem;
+            width: 6rem;
             text-align: center;
             position: relative;
             font-size: 0.8rem;
@@ -146,6 +147,25 @@ main {
                 background-repeat: no-repeat;
             }
         }
+        &__change.negative {
+            width: 5.5rem;
+            text-align: center;
+            position: relative;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: c.$negative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                left: 0;
+                bottom: -0.05rem;
+                background-image: url("../src/images/icon-down.svg");
+                background-repeat: no-repeat;
+            }
+        }
 
         &.facebook {
             border-top: 4px solid c.$facebook;
@@ -154,7 +174,8 @@ main {
             border-top: 4px solid c.$twitter;
         }
         &.instagram {
-            border-top: 4px solid c.$instagram2;
+            border-image: c.$instagram;
+            border-top: 4px solid;
         }
         &.youtube {
             border-top: 4px solid c.$youtube;

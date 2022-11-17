@@ -37,6 +37,7 @@ body {
   width: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -109,7 +110,7 @@ main {
 .socials-item {
   width: 100%;
   height: 12.5rem;
-  background-color: hsl(0deg, 0%, 90%);
+  background-color: hsl(227deg, 47%, 96%);
   border-radius: 0.3rem;
   margin-bottom: 1.1rem;
   display: flex;
@@ -125,9 +126,9 @@ main {
 }
 .socials-item__type {
   font-size: 0.7rem;
-}
-.socials-item__type i {
-  color: hsl(208deg, 92%, 53%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .socials-item__number {
   font-size: 3.4rem;
@@ -140,7 +141,7 @@ main {
   letter-spacing: 0.3rem;
 }
 .socials-item__change.positive {
-  width: 5rem;
+  width: 6rem;
   text-align: center;
   position: relative;
   font-size: 0.8rem;
@@ -157,6 +158,24 @@ main {
   background-image: url("../src/images/icon-up.svg");
   background-repeat: no-repeat;
 }
+.socials-item__change.negative {
+  width: 5.5rem;
+  text-align: center;
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: hsl(356deg, 69%, 56%);
+}
+.socials-item__change.negative::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 0;
+  bottom: -0.05rem;
+  background-image: url("../src/images/icon-down.svg");
+  background-repeat: no-repeat;
+}
 .socials-item.facebook {
   border-top: 4px solid hsl(208deg, 92%, 53%);
 }
@@ -164,7 +183,8 @@ main {
   border-top: 4px solid hsl(203deg, 89%, 53%);
 }
 .socials-item.instagram {
-  border-top: 4px solid rgb(223, 73, 150);
+  border-image: linear-gradient(90deg, rgb(253, 196, 104), rgb(223, 73, 150)) 1;
+  border-top: 4px solid;
 }
 .socials-item.youtube {
   border-top: 4px solid hsl(348deg, 97%, 39%);
