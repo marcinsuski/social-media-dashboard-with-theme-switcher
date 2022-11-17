@@ -1,15 +1,17 @@
 $primary-color: #000000;
-$secondary-color: #c2c2c2;
-$background: hsl(0, 100, 100);
+$secondary-color: #747474;
+$background: hsl(0, 100%, 100%);
 $background-element: hsl(0, 0%, 90%);
 $lightmode-toggle-bg: hsl(230, 22%, 74%);
-$lightmode-toggle-color: hsl(0, 100, 100);
+$lightmode-toggle-color: rgb(255, 255, 255);
 $darkmode-toggle-bg: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 $darkmode-toogle-color: rgb(45, 45, 45);
 $facebook: hsl(208, 92%, 53%);
 $twitter: hsl(203, 89%, 53%);
-$instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
-$youTube: hsl(348, 97%, 39%);
+$instagram1: rgb(253, 196, 104);
+$instagram2: rgb(223, 73, 150);
+
+$youtube: hsl(348, 97%, 39%);
 
 $positive: hsl(163, 72%, 41%);
 $negative: hsl(356, 69%, 56%);
@@ -21,16 +23,6 @@ $negative: hsl(356, 69%, 56%);
 }
 
 /*
-
-#### Dark Theme
-
-- Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
-
-#### Light Theme
-
-- Toggle: hsl(230, 22%, 74%)
-
-### Neutral
 
 #### Dark Theme
 
