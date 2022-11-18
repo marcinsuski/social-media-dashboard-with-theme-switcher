@@ -22,6 +22,18 @@ $negative: hsl(356, 69%, 56%);
     padding: 0;
 }
 
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
 /*
 
 #### Dark Theme
