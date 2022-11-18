@@ -2,12 +2,16 @@
 
 body {
     width: 100vw;
-
     font-size: 100%;
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &.dark {
+        background-color: c.$background-dark;
+        color: c.$primary-color-dark;
+    }
 }
 
 .wrapper {
@@ -45,6 +49,10 @@ header {
         font-size: 0.875rem;
         color: c.$secondary-color;
         font-weight: 700;
+
+        &.dark {
+            color: c.$secondary-color-dark;
+        }
     }
 }
 
@@ -59,6 +67,10 @@ header {
         font-size: 0.7rem;
         color: c.$secondary-color;
         font-weight: 700;
+
+        &.dark {
+            color: c.$secondary-color-dark;
+        }
     }
 }
 
@@ -72,11 +84,27 @@ header {
     padding: 0 0.2rem;
     justify-content: flex-end;
 
+    &.dark {
+        background-image: c.$darkmode-toggle-bg;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: none;
+        background-image: c.$darkmode-toggle-bg;
+    }
+
     &-switch {
         width: 1.1rem;
         height: 1.1rem;
         border-radius: 50px;
         background-color: c.$lightmode-toggle-color;
+        transition: 0.5s ease-in-out;
+
+        &.dark {
+            transform: translateX(-130%);
+            background-color: c.$background-dark;
+        }
     }
 }
 
@@ -102,6 +130,20 @@ main {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+
+        &.dark {
+            background-color: c.$background-element-dark;
+
+            &:hover {
+                background: c.$background-element-dark-hover;
+                cursor: pointer;
+            }
+        }
+
+        &:hover {
+            background: c.$background-element-hover;
+            cursor: pointer;
+        }
         &__wrapper {
             display: flex;
             flex-direction: column;
@@ -116,6 +158,10 @@ main {
             gap: 5px;
         }
 
+        &__type > p {
+            color: c.$secondary-color-dark;
+        }
+
         &__number {
             font-size: 3.4rem;
             font-weight: 700;
@@ -126,6 +172,10 @@ main {
             text-transform: uppercase;
             color: c.$secondary-color;
             letter-spacing: 0.3rem;
+
+            &.dark {
+                color: c.$secondary-color-dark;
+            }
         }
 
         &__change.positive {
@@ -192,6 +242,10 @@ main {
 
     h2 {
         color: c.$secondary-color;
+
+        &.dark {
+            color: c.$primary-color-dark;
+        }
     }
 }
 
@@ -210,12 +264,28 @@ main {
     grid-template-columns: 80% 20%;
     grid-template-rows: repeat(2, 1fr);
 
+    &.dark {
+        background-color: c.$background-element-dark;
+
+        &:hover {
+            background-color: c.$background-element-dark-hover;
+        }
+    }
+
+    &:hover {
+        background: c.$background-element-hover;
+        cursor: pointer;
+    }
     &__title {
         color: c.$secondary-color;
         font-size: 1rem;
         font-weight: 700;
         align-self: center;
         justify-self: start;
+
+        &.dark {
+            color: c.$secondary-color-dark;
+        }
     }
 
     &__icon {
@@ -233,7 +303,7 @@ main {
     }
 
     &__change {
-        font-size: 1.3em;
+        font-size: 0.8em;
         font-weight: 700;
         align-self: end;
         justify-self: end;
@@ -243,7 +313,7 @@ main {
             width: fit-content;
             text-align: end;
             position: relative;
-            font-size: 0.8rem;
+
             font-weight: 700;
             color: c.$positive;
 
@@ -263,7 +333,7 @@ main {
             width: fit-content;
             text-align: end;
             position: relative;
-            font-size: 0.8rem;
+
             font-weight: 700;
             color: c.$negative;
 
@@ -284,6 +354,10 @@ main {
 @include c.media-lg {
     body {
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .wrapper {
@@ -297,6 +371,7 @@ main {
     header {
         width: 100%;
         flex-direction: row;
+        margin-bottom: 1.5rem;
 
         .title {
             border-bottom: none;
@@ -331,11 +406,11 @@ main {
     }
     .overview {
         width: 100%;
-        height: 5rem;
+        height: 2rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 1rem 0;
+        margin: 0.5rem 0 1rem 0;
 
         h2 {
             font-size: 1.3rem;
@@ -351,8 +426,60 @@ main {
 
         &-el {
             width: 13.75rem;
-            height: 9rem;
+            height: 7.5rem;
+            padding: 0.5rem 1.5rem 1rem;
+
+            &__title {
+                font-size: 0.75rem;
+            }
+
+            &__icon {
+                font-size: 1rem;
+                font-weight: 700;
+                align-self: center;
+                justify-self: end;
+            }
+
+            &__numbers {
+                font-size: 1.8rem;
+                font-weight: 700;
+                align-self: end;
+                justify-self: start;
+            }
+
+            &__change {
+                font-size: 0.6rem;
+                font-weight: 700;
+                align-self: end;
+                justify-self: end;
+                padding-bottom: 0.4rem;
+
+                &.positive {
+                    &::after {
+                        width: 1rem;
+                        height: 1rem;
+                        left: -1rem;
+                        bottom: 0.3rem;
+                        background-position: center;
+                    }
+                }
+
+                &.negative {
+                    &::after {
+                        width: 1rem;
+                        height: 1rem;
+                        left: -1rem;
+                        bottom: 0.2rem;
+                        background-position: center;
+                    }
+                }
+            }
         }
+    }
+
+    footer {
+        position: fixed;
+        bottom: 1rem;
     }
 }
 

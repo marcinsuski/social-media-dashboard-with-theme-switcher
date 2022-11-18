@@ -29,6 +29,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+body.dark {
+  background-color: hsl(230deg, 17%, 14%);
+  color: hsl(0deg, 0%, 100%);
+}
 
 .wrapper {
   margin-top: 1.5rem;
@@ -65,6 +69,9 @@ header {
   color: #747474;
   font-weight: 700;
 }
+.title p.dark {
+  color: hsl(228deg, 34%, 66%);
+}
 
 .mode {
   width: 100%;
@@ -78,6 +85,9 @@ header {
   color: #747474;
   font-weight: 700;
 }
+.mode p.dark {
+  color: hsl(228deg, 34%, 66%);
+}
 
 .toggle {
   width: 3rem;
@@ -89,11 +99,24 @@ header {
   padding: 0 0.2rem;
   justify-content: flex-end;
 }
+.toggle.dark {
+  background-image: linear-gradient(90deg, rgb(55, 143, 230), rgb(62, 218, 130));
+}
+.toggle:hover {
+  cursor: pointer;
+  background-color: none;
+  background-image: linear-gradient(90deg, rgb(55, 143, 230), rgb(62, 218, 130));
+}
 .toggle-switch {
   width: 1.1rem;
   height: 1.1rem;
   border-radius: 50px;
   background-color: rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+}
+.toggle-switch.dark {
+  transform: translateX(-130%);
+  background-color: hsl(230deg, 17%, 14%);
 }
 
 main {
@@ -109,13 +132,24 @@ main {
 .socials-item {
   width: 100%;
   height: 12.5rem;
-  background-color: hsl(227deg, 47%, 96%);
+  background-color: hsla(226deg, 19%, 86%, 0.5);
   border-radius: 0.3rem;
   margin-bottom: 1.1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+.socials-item.dark {
+  background-color: hsl(228deg, 28%, 20%);
+}
+.socials-item.dark:hover {
+  background: hsl(229deg, 34%, 25%);
+  cursor: pointer;
+}
+.socials-item:hover {
+  background: hsl(226deg, 19%, 86%);
+  cursor: pointer;
 }
 .socials-item__wrapper {
   display: flex;
@@ -129,6 +163,9 @@ main {
   align-items: center;
   gap: 5px;
 }
+.socials-item__type > p {
+  color: hsl(228deg, 34%, 66%);
+}
 .socials-item__number {
   font-size: 3.4rem;
   font-weight: 700;
@@ -138,6 +175,9 @@ main {
   text-transform: uppercase;
   color: #747474;
   letter-spacing: 0.3rem;
+}
+.socials-item__followers.dark {
+  color: hsl(228deg, 34%, 66%);
 }
 .socials-item__change.positive {
   width: 6rem;
@@ -199,13 +239,16 @@ main {
 .overview h2 {
   color: #747474;
 }
+.overview h2.dark {
+  color: hsl(0deg, 0%, 100%);
+}
 
 .stats {
   width: 100%;
 }
 
 .stats-el {
-  background-color: hsl(227deg, 47%, 96%);
+  background-color: hsla(226deg, 19%, 86%, 0.5);
   border-radius: 0.3rem;
   margin-bottom: 1rem;
   padding: 1rem 2rem 1.5rem;
@@ -215,12 +258,25 @@ main {
   grid-template-columns: 80% 20%;
   grid-template-rows: repeat(2, 1fr);
 }
+.stats-el.dark {
+  background-color: hsl(228deg, 28%, 20%);
+}
+.stats-el.dark:hover {
+  background-color: hsl(229deg, 34%, 25%);
+}
+.stats-el:hover {
+  background: hsl(226deg, 19%, 86%);
+  cursor: pointer;
+}
 .stats-el__title {
   color: #747474;
   font-size: 1rem;
   font-weight: 700;
   align-self: center;
   justify-self: start;
+}
+.stats-el__title.dark {
+  color: hsl(228deg, 34%, 66%);
 }
 .stats-el__icon {
   font-size: 1rem;
@@ -235,7 +291,7 @@ main {
   justify-self: start;
 }
 .stats-el__change {
-  font-size: 1.3em;
+  font-size: 0.8em;
   font-weight: 700;
   align-self: end;
   justify-self: end;
@@ -245,7 +301,6 @@ main {
   width: fit-content;
   text-align: end;
   position: relative;
-  font-size: 0.8rem;
   font-weight: 700;
   color: hsl(163deg, 72%, 41%);
 }
@@ -263,7 +318,6 @@ main {
   width: fit-content;
   text-align: end;
   position: relative;
-  font-size: 0.8rem;
   font-weight: 700;
   color: hsl(356deg, 69%, 56%);
 }
@@ -281,6 +335,10 @@ main {
 @media screen and (min-width: 1024px) {
   body {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .wrapper {
     height: 80%;
@@ -292,6 +350,7 @@ main {
   header {
     width: 100%;
     flex-direction: row;
+    margin-bottom: 1.5rem;
   }
   header .title {
     border-bottom: none;
@@ -319,11 +378,11 @@ main {
   }
   .overview {
     width: 100%;
-    height: 5rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 1rem 0;
+    margin: 0.5rem 0 1rem 0;
   }
   .overview h2 {
     font-size: 1.3rem;
@@ -337,7 +396,48 @@ main {
   }
   .stats-el {
     width: 13.75rem;
-    height: 9rem;
+    height: 7.5rem;
+    padding: 0.5rem 1.5rem 1rem;
+  }
+  .stats-el__title {
+    font-size: 0.75rem;
+  }
+  .stats-el__icon {
+    font-size: 1rem;
+    font-weight: 700;
+    align-self: center;
+    justify-self: end;
+  }
+  .stats-el__numbers {
+    font-size: 1.8rem;
+    font-weight: 700;
+    align-self: end;
+    justify-self: start;
+  }
+  .stats-el__change {
+    font-size: 0.6rem;
+    font-weight: 700;
+    align-self: end;
+    justify-self: end;
+    padding-bottom: 0.4rem;
+  }
+  .stats-el__change.positive::after {
+    width: 1rem;
+    height: 1rem;
+    left: -1rem;
+    bottom: 0.3rem;
+    background-position: center;
+  }
+  .stats-el__change.negative::after {
+    width: 1rem;
+    height: 1rem;
+    left: -1rem;
+    bottom: 0.2rem;
+    background-position: center;
+  }
+  footer {
+    position: fixed;
+    bottom: 1rem;
   }
 }
 .attribution {
